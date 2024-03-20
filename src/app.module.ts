@@ -5,13 +5,13 @@ import { AppService } from './app.service';
 import { MofiLogging } from './utilities/mofi-logging';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService, MofiLogging],
+    imports: [],
+    controllers: [AppController],
+    providers: [AppService, MofiLogging],
 })
 
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes('*');
-  }
+    configure(consumer: MiddlewareConsumer) {
+        consumer.apply(LoggerMiddleware).forRoutes('*');
+    }
 }
