@@ -7,7 +7,7 @@ export class LoggerMiddleware implements NestMiddleware {
     constructor(private mofiLogging: MofiLogging) {}
 
     use(req: Request, res: Response, next: NextFunction) {
-        this.mofiLogging.logger.httpMiddleware(req, res);
+        this.mofiLogging.loggerMiddleware.httpMiddleware(req, res);
         next();
     }
 }
